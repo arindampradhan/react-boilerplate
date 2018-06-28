@@ -18,7 +18,6 @@
     "analyze": "node ./internals/scripts/analyze.js",
     "extract-intl": "node ./internals/scripts/extract-intl.js",
     "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
-    "preinstall": "npm run npmcheckversion",
     "postinstall": "npm run build:dll",
     "prebuild": "npm run build:clean",
     "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
@@ -47,17 +46,6 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "prettify": "prettier --write"
   },
-  "lint-staged": {
-    "*.js": [
-      "npm run lint:eslint:fix",
-      "git add --force"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add --force"
-    ]
-  },
-  "pre-commit": "lint:staged",
   "babel": {
     "plugins": [
       "styled-components"
@@ -212,6 +200,7 @@
     "eslint-plugin-redux-saga": "0.9.0",
     "eventsource-polyfill": "0.9.6",
     "exports-loader": "0.7.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "1.1.11",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
@@ -223,13 +212,14 @@
     "lint-staged": "7.2.0",
     "ngrok": "3.0.1",
     "node-plop": "0.15.0",
+    "node-sass": "^4.9.0",
     "null-loader": "0.1.1",
     "offline-plugin": "5.0.5",
     "plop": "2.0.0",
-    "pre-commit": "1.2.2",
     "prettier": "1.13.5",
     "react-test-renderer": "16.4.1",
     "rimraf": "2.6.2",
+    "sass-loader": "^7.0.3",
     "shelljs": "0.8.2",
     "style-loader": "0.21.0",
     "stylelint": "9.3.0",

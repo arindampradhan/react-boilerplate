@@ -41,6 +41,7 @@ export default function App() {
         <Route path="/features" component={FeaturePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
+      <div className="help-anything">hello world</div>
       <Footer />
     </AppWrapper>
   );
