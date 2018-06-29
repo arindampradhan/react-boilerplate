@@ -1,0 +1,43 @@
+/**
+ *
+ * {{ properCase name }}
+ *
+ */
+
+import React, { Component } from "react";
+
+const {{ properCase name }}Context = React.createContext();
+
+class {{ properCase name }}Provider extends Component {
+  state = {
+    count: 0
+  };
+  increment = () => {
+    this.setState({
+      count: this.state.count + 1
+    });
+  };
+  decrement = () => {
+    this.setState({
+      count: this.state.count - 1
+    });
+  };
+  render() {
+    const vals = {
+      count: this.state.count,
+      increment: this.increment,
+      decrement: this.decrement,
+    }
+    return (
+      <{{ properCase name }}Context.Provider value={vals}>
+        {this.props.children}
+      </{{ properCase name }}Context.Provider>
+    );
+  }
+}
+
+const {{ properCase name }}Consumer = {{ properCase name }}Context.Consumer;
+
+export { {{ properCase name }}Consumer };
+
+export default {{ properCase name }}Provider;
