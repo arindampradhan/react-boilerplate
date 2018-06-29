@@ -1,8 +1,6 @@
 module.exports = {
   components: [
     'app/components/Button/index.js',
-    'app/components/H1/index.js',
-    'app/components/List/index.js',
   ],
   defaultExample: true,
   ribbon: {
