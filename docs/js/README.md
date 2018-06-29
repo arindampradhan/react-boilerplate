@@ -22,7 +22,6 @@ add new parts of your application!
 - [Redux](redux.md)
 - [ImmutableJS](immutablejs.md)
 - [reselect](reselect.md)
-- [redux-saga](redux-saga.md)
 - [react-intl](i18n.md)
 - [routing](routing.md)
 - [Asynchronously loaded components](async-components.md)
