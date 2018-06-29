@@ -1,4 +1,5 @@
-@import "variables.scss";
+@import 'bootstrap/scss/bootstrap.scss'; // direct import from node_modules
+@import "variables";
 
 .help-anything {
   text-align: center;
