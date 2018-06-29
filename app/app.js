@@ -16,7 +16,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import FontFaceObserver from 'fontfaceobserver';
 import createHistory from 'history/createBrowserHistory';
 import 'sanitize.css/sanitize.css';
-import './assets/main.scss';
+import './assets/styles/main.scss';
 
 // Import root app
 import App from 'containers/App';
