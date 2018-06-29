@@ -37,12 +37,12 @@ module.exports = {
         return 'The name is required';
       },
     },
-    {
-      type: 'confirm',
-      name: 'wantMessages',
-      default: true,
-      message: 'Do you want i18n messages (i.e. will this component use text)?',
-    },
+    // {
+    //   type: 'confirm',
+    //   name: 'wantMessages',
+    //   default: true,
+    //   message: 'Do you want i18n messages (i.e. will this component use text)?',
+    // },
     {
       type: 'confirm',
       name: 'wantLoadable',
@@ -71,12 +71,13 @@ module.exports = {
         templateFile: componentTemplate,
         abortOnFail: true,
       },
-      {
-        type: 'add',
-        path: '../../app/components/{{properCase name}}/tests/index.test.js',
-        templateFile: './component/test.js.hbs',
-        abortOnFail: true,
-      },
+      // remove testcase
+      // {
+      //   type: 'add',
+      //   path: '../../app/components/{{properCase name}}/tests/index.test.js',
+      //   templateFile: './component/test.js.hbs',
+      //   abortOnFail: true,
+      // },
     ];
 
     // If they want a i18n messages file
