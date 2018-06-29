@@ -9,24 +9,13 @@
 const componentExists = require('../utils/componentExists');
 
 module.exports = {
-  description: 'Add an unconnected component',
+  description: 'Add an unconnected context component',
   prompts: [
-    {
-      type: 'list',
-      name: 'type',
-      message: 'Select the type of component',
-      default: 'Stateless Function',
-      choices: () => [
-        'Stateless Function',
-        'React.PureComponent',
-        'React.Component',
-      ],
-    },
     {
       type: 'input',
       name: 'name',
       message: 'What should it be called?',
-      default: 'Button',
+      default: 'Counter',
       validate: value => {
         if (/.+/.test(value)) {
           return componentExists(value)
@@ -52,23 +41,21 @@ module.exports = {
   ],
   actions: data => {
     // Generate index.js and index.test.js
-    let componentTemplate;
-
-    switch (data.type) {
-      case 'Stateless Function': {
-        componentTemplate = './component/stateless.js.hbs';
-        break;
-      }
-      default: {
-        componentTemplate = './component/class.js.hbs';
-      }
-    }
+    const componentTemplate = './context/class.js.hbs';
+    const contextTemplate = './context/context.js.hbs';
+    const lodableTemplate = './context/loadable.js.hbs';
 
     const actions = [
       {
         type: 'add',
-        path: '../../app/components/{{properCase name}}/index.js',
+        path: '../../app/containers/{{properCase name}}/index.js',
         templateFile: componentTemplate,
+        abortOnFail: true,
+      },
+      {
+        type: 'add',
+        path: '../../app/containers/{{properCase name}}/context.js',
+        templateFile: contextTemplate,
         abortOnFail: true,
       },
       // remove testcase
@@ -84,8 +71,8 @@ module.exports = {
     if (data.wantMessages) {
       actions.push({
         type: 'add',
-        path: '../../app/components/{{properCase name}}/messages.js',
-        templateFile: './component/messages.js.hbs',
+        path: '../../app/containers/{{properCase name}}/messages.js',
+        templateFile: './container/messages.js.hbs',
         abortOnFail: true,
       });
     }
@@ -94,15 +81,15 @@ module.exports = {
     if (data.wantLoadable) {
       actions.push({
         type: 'add',
-        path: '../../app/components/{{properCase name}}/Loadable.js',
-        templateFile: './component/loadable.js.hbs',
+        path: '../../app/containers/{{properCase name}}/Loadable.js',
+        templateFile: lodableTemplate,
         abortOnFail: true,
       });
     }
 
     actions.push({
       type: 'prettify',
-      path: '/components/',
+      path: '/container/',
     });
 
     return actions;

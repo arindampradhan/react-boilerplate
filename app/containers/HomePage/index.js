@@ -1,7 +1,7 @@
 /*
  * HomePage
  *
- * This is the first thing users see of our App, at the '/' route
+ * This is the first thinjectSagag users see of our App, at the '/' route
  */
 
 import React from 'react';
@@ -13,7 +13,6 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
 import injectReducer from 'utils/injectReducer';
-import injectSaga from 'utils/injectSaga';
 import {
   makeSelectRepos,
   makeSelectLoading,
@@ -31,7 +30,6 @@ import { loadRepos } from '../App/actions';
 import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
-import saga from './saga';
 
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
@@ -129,10 +127,8 @@ const withConnect = connect(
 );
 
 const withReducer = injectReducer({ key: 'home', reducer });
-const withSaga = injectSaga({ key: 'home', saga });
 
 export default compose(
   withReducer,
-  withSaga,
   withConnect,
 )(HomePage);
