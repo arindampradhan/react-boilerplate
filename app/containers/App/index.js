@@ -15,7 +15,7 @@ import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import LottieTest from 'components/LottieTest/Loadable'
+import LottieTest from 'components/Lottie/Loadable'
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
