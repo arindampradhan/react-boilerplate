@@ -32,8 +32,8 @@ function PageLoader(props) {
 
 PageLoader.defaultProps = {
   type: 1,
-  height: 200,
-  width: 200,
+  height: 600,
+  width: 600,
 };
 
 PageLoader.propTypes = {
