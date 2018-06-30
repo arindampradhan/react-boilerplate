@@ -9,11 +9,12 @@ module.exports = {
     },
     {
       name: 'Lottie',
-      description: 'Lottie after effects components',
+      description: 'Lottie after effects components. Responsive by nature as svg based',
       components: () => [
         './app/components/Lottie/index.js',
         './app/components/Lottie/BasicLoader.js',
         './app/components/Lottie/Loader.js',
+        './app/components/Lottie/PageLoader.js',
       ],
     },
   ],
