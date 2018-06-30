@@ -10,7 +10,11 @@ module.exports = {
     {
       name: 'Lottie',
       description: 'Lottie after effects components',
-      components: ['./app/components/Lottie/Loadable.js'],
+      components: () => [
+        './app/components/Lottie/index.js',
+        './app/components/Lottie/BasicLoader.js',
+        './app/components/Lottie/Loader.js',
+      ],
     },
   ],
   defaultExample: true,
