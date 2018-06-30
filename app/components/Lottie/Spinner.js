@@ -1,5 +1,5 @@
 /**
- * BasicLoader
+ * Spinner
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -15,7 +15,7 @@ import data8 from './lottiefiles/side_to_side_loader.json';
 import data9 from './lottiefiles/cup_game_loader.json';
 import data10 from './lottiefiles/single_wave_loader.json';
 
-function BasicLoader(props) {
+function Spinner(props) {
   const loaderType = {
     1: data1,
     2: data2,
@@ -37,13 +37,13 @@ function BasicLoader(props) {
   return <Lottie options={defaultOptions} {...props} />;
 }
 
-BasicLoader.defaultProps = {
+Spinner.defaultProps = {
   type: 1,
   height: 200,
   width: 200,
 };
 
-BasicLoader.propTypes = {
+Spinner.propTypes = {
   /**
    * 1 or 2 or 3 and likewise
    */
@@ -58,4 +58,4 @@ BasicLoader.propTypes = {
   width: PropTypes.number,
 };
 
-export default BasicLoader;
+export default Spinner;
