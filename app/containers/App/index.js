@@ -15,6 +15,7 @@ import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import LottieTest from 'components/LottieTest/Loadable'
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
@@ -37,6 +38,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/lottie" component={LottieTest} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

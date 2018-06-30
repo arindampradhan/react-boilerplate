@@ -1,6 +1,17 @@
+const webpackconf = require('./internals/webpack/webpack.styleguide.babel.js');
+
 module.exports = {
-  components: [
-    'app/components/Button/index.js',
+  sections: [
+    {
+      name: 'Components',
+      description: 'List of all the components',
+      components: ['./app/components/Button/index.js'],
+    },
+    {
+      name: 'Lottie',
+      description: 'Lottie after effects components',
+      components: ['./app/components/Lottie/Loadable.js'],
+    },
   ],
   defaultExample: true,
   ribbon: {
@@ -8,19 +19,5 @@ module.exports = {
     text: 'Fork on Bitbucket [private]',
   },
   title: 'Rubique Styleguide',
-  webpackConfig: {
-    module: {
-      rules: [
-        {
-          test: /\.jsx?$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader',
-        },
-        {
-          test: /\.css$/,
-          loader: 'style-loader!css-loader',
-        },
-      ],
-    },
-  },
+  webpackConfig: webpackconf,
 };
