@@ -10,6 +10,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
+import { RouterTransition } from "./animation";
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
@@ -36,11 +37,13 @@ export default function App() {
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
       <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/lottie" component={LottieTest} />
-        <Route path="" component={NotFoundPage} />
-      </Switch>
+      <RouterTransition>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/lottie" component={LottieTest} />
+          <Route path="" component={NotFoundPage} />
+        </Switch>
+      </RouterTransition>
       <Footer />
     </AppWrapper>
   );

@@ -134,6 +134,7 @@
     ]
   },
   "dependencies": {
+    "animate.css": "^3.6.1",
     "babel-polyfill": "6.26.0",
     "bootstrap": "^4.1.1",
     "chalk": "2.4.1",
@@ -141,6 +142,7 @@
     "cross-env": "5.2.0",
     "express": "4.16.3",
     "fontfaceobserver": "2.0.13",
+    "gsap": "^2.0.1",
     "history": "4.7.2",
     "hoist-non-react-statics": "2.5.5",
     "immutable": "3.8.2",

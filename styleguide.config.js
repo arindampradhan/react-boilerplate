@@ -8,9 +8,17 @@ module.exports = {
       components: ['./app/components/Button/index.js'],
     },
     {
+      name: 'Animation Kit',
+      description: 'Animation effects using animate.css and GSAP',
+      components: [
+        // './app/components/AnimationKit/index.js',
+        './app/components/AnimationKit/GSAP.js',
+      ],
+    },
+    {
       name: 'Lottie',
       description: 'Lottie after effects components. Responsive by nature as svg based',
-      components: () => [
+      components: [
         './app/components/Lottie/index.js',
         './app/components/Lottie/Spinner.js',
         './app/components/Lottie/Loader.js',

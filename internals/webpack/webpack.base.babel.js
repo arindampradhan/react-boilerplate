@@ -21,7 +21,7 @@ module.exports = options => ({
       path: path.resolve(process.cwd(), 'build'),
       publicPath: '/',
     },
-    options.output
+    options.output,
   ), // Merge with env dependent settings
   optimization: options.optimization,
   module: {
@@ -39,10 +39,14 @@ module.exports = options => ({
         use: [
           {
             loader: 'style-loader',
+            options: {
+              sourceMap: options.mode === 'development',
+            },
           },
           {
             loader: 'css-loader',
             options: {
+              modules: true,
               sourceMap: options.mode === 'development',
             },
           },

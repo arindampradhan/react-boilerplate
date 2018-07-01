@@ -2,10 +2,10 @@
  * Asynchronously loads the component for NotFoundPage
  */
 import Loadable from 'react-loadable';
-
-import LoadingIndicator from 'components/LoadingIndicator';
+import React from 'react';
+import Spinner from 'components/Lottie/Spinner';
 
 export default Loadable({
   loader: () => import('./index'),
-  loading: LoadingIndicator,
+  loading: Spinner,
 });
